@@ -7,23 +7,26 @@ if (process.argv[2] === 'trump-tweets'){
 	let T = new Twitter(key.twitter)
 	//parameters for the api call
 	let params = {
-		q: '@realDonaldTrump',
+		// q: '@realDonaldTrump',
 		count: 20,
-		result_type: 'recent',
-		lang: 'en',
+		// result_type: 'recent',
+		// lang: 'en',
 		// id: 2379574
+		screen_name: '@realDonaldTrump'
 	}
 
-	T.get('search/tweets', params, function(err, data, res) {
+	T.get('statuses/user_timeline', params, function(err, data, res) {
 		if (!err) {
 			// console.log(data)
-			console.log(`looking for ${params.q}`)
+			console.log(`looking for ${params.screen_name}`)
+			// console.log(data)
 			//for all the returns
-			// console.log(data.statuses[0].text)
-			for (let i=0; i<data.statuses.length; i++) {
-				console.log(data.statuses[i]['text'])
-				console.log(data.statuses[i]['text'])
-				user.name
+			// console.log(data[1])
+			for (let i=0; i<data.length; i++) {
+				//use moment to make time stamp
+				console.log(data[i]['user']['name'] + " sent at " )
+				console.log(data[i]['text'])
+				console.log(' ')
 			}
 		}
 		else {
