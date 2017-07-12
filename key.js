@@ -8,5 +8,6 @@ exports.omdb = {
 	key:'40e9cece',
 }
 exports.spotify = {
-
+	id: '45cac88669a8462c99b735a2c90ba5c9',
+	secret: 'd8a34aca2bbe47d4bed780c134ce8afd'
 }

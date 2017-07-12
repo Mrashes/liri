@@ -1,7 +1,8 @@
 const key = require('./key.js')
 const Twitter = require('twitter')
 // const omdb = require('omdb');
-const request = require('request');
+const request = require('request')
+const Spotify = require('node-spotify-api')
 
 if (process.argv[2] === 'trump-tweets'){
 	let T = new Twitter(key.twitter)
@@ -35,7 +36,15 @@ if (process.argv[2] === 'trump-tweets'){
 	})
 }
 else if (process.argv[2] === 'spotify-this-song') {
-
+	var s = new Spotify(key.spotify);
+	 
+	s.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
+	  if (err) {
+	    return console.log('Error occurred: ' + err);
+	  }
+	 
+	console.log(data.tracks.items); 
+	});
 }
 else if (process.argv[2] === 'movie-this') {
 	let movieName = process.argv[3] || 'Mr. Nobody'
