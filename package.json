@@ -9,6 +9,8 @@
   "author": "Max Rashes",
   "license": "ISC",
   "dependencies": {
+    "file-system": "^2.2.2",
+    "fs": "0.0.1-security",
     "moviedb": "^0.2.8",
     "node-spotify-api": "^1.0.5",
     "omdb": "^0.8.0",
