@@ -3,13 +3,7 @@ const Twitter = require('twitter')
 const request = require('request')
 const Spotify = require('node-spotify-api')
 const file = require('file-system')
-var util = require('util');
-
-
-function writeFile() {
-
-
-}
+const util = require('util');
 
 
 function liri(input) {
